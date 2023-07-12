@@ -91,6 +91,10 @@ public class App {
 
                     JOptionPane.showMessageDialog(null, String.format("%.2f%s%s%s%.2f%s%s%s", valorMoedaA, " (", moeda[0], ") equivale a ", valorMoedaB, " (", moeda[1], ")."), "Conversor de Moedas", JOptionPane.INFORMATION_MESSAGE);
 
+                } else {
+
+                    JOptionPane.showMessageDialog(null, "Houve uma falha ao tentar realizar a conversão das moedas.", "Conversor de Moedas", JOptionPane.ERROR_MESSAGE);
+
                 }
 
             } else if (selectedOption.toString() == CONVERSOR_TEMPERATURA) {
@@ -125,6 +129,10 @@ public class App {
                 if (valorNaEscalaB != null) {
 
                     JOptionPane.showMessageDialog(null, String.format("%.2f%s%s%s%.2f%s%s%s", valorNaEscalaA, " (", escala[0], ") equivale a ", valorNaEscalaB, " (", escala[1], ")."), "Conversor de Temperaturas", JOptionPane.INFORMATION_MESSAGE);
+
+                } else {
+
+                    JOptionPane.showMessageDialog(null, "Houve uma falha ao tentar realizar a conversão das temperaturas.", "Conversor de Temperaturas", JOptionPane.ERROR_MESSAGE);
 
                 }
 
