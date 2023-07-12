@@ -20,8 +20,8 @@ Escalas disponíveis para conversão de temperatura:
 
 ## Referências
 
-https://www.alura.com.br/artigos/como-criar-interface-grafica-swing-java
-https://www.alura.com.br/challenges/oracle-one-back-end/conversordemoedas/conversor
-https://www.google.com/finance/
-https://jsoup.org
-https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal
+* https://www.alura.com.br/artigos/como-criar-interface-grafica-swing-java
+* https://www.alura.com.br/challenges/oracle-one-back-end/conversordemoedas/conversor
+* https://www.google.com/finance/
+* https://jsoup.org
+* https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal
