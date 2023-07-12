@@ -18,7 +18,7 @@ Escalas disponíveis para conversão de temperatura:
 * Fahrenheit;
 * Kelvin.
 
-#Referências
+## Referências
 
 https://www.alura.com.br/artigos/como-criar-interface-grafica-swing-java
 https://www.alura.com.br/challenges/oracle-one-back-end/conversordemoedas/conversor
