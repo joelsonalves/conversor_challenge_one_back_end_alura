@@ -1,4 +1,4 @@
-# Conversor de Moeda e Temperatura | Challenge ONE Back End | Alura
+# Conversor | Challenge ONE Back End | Alura
 
 Este projeto construído em Java utilizando Maven, permite que o usuário realize conversão de Moedas e de Temperaturas.
 
