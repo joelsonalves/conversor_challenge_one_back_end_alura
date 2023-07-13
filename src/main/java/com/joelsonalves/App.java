@@ -5,8 +5,16 @@ import javax.swing.JOptionPane;
 public class App {
     public static void main( String[] args ) {
         
-        final String CONVERSOR_MOEDA = "Conversor de Moeda";
-        final String CONVERSOR_TEMPERATURA = "Conversor de Temperatura";
+        final String CONVERSOR = "Conversor";
+        final String CONVERSOR_MOEDA = "Conversor de Moedas";
+        final String CONVERSOR_TEMPERATURA = "Conversor de Temperaturas";
+
+        final String ESCOLHA_UMA_OPCAO = "Escolha uma opção:";
+        final String DIGITE_UM_VALOR = "Digite um valor:";
+        final String VALOR_INVALIDO = "O valor digitado é inválido.";
+        final String FALHA_CONVERSOR_MOEDA = "Houve uma falha ao tentar realizar a conversão das moedas.";
+        final String FALHA_CONVERSOR_TEMPERATURA = "Houve uma falha ao tentar realizar a conversão das temperaturas.";
+        final String APP_FINALIZADO = "App Finalizado.";
 
         final String BRL_USD = "BRL-USD";
         final String BRL_EUR = "BRL-EUR";
@@ -48,11 +56,11 @@ public class App {
         MENU_PRINCIPAL:
         while (true) {
 
-            Object selectedOption = JOptionPane.showInputDialog(null, "Escolha uma opção", "Conversor", JOptionPane.QUESTION_MESSAGE, null, optionsPrincipal, optionsPrincipal[0]);
+            Object selectedOption = JOptionPane.showInputDialog(null, ESCOLHA_UMA_OPCAO, CONVERSOR, JOptionPane.QUESTION_MESSAGE, null, optionsPrincipal, optionsPrincipal[0]);
 
             if (selectedOption == null) {
 
-                JOptionPane.showMessageDialog(null, "App finalizado.", "Conversor", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, APP_FINALIZADO, CONVERSOR, JOptionPane.INFORMATION_MESSAGE);
 
                 break MENU_PRINCIPAL;
 
@@ -60,7 +68,7 @@ public class App {
 
             if (selectedOption.toString() == CONVERSOR_MOEDA) {
 
-                selectedOption = JOptionPane.showInputDialog(null, "Escolha uma opção", "Conversor de Moedas", JOptionPane.QUESTION_MESSAGE, null, optionsMoeda, optionsMoeda[0]);
+                selectedOption = JOptionPane.showInputDialog(null, ESCOLHA_UMA_OPCAO, CONVERSOR_MOEDA, JOptionPane.QUESTION_MESSAGE, null, optionsMoeda, optionsMoeda[0]);
 
                 if (selectedOption == null) {
 
@@ -70,7 +78,7 @@ public class App {
 
                 String[] moeda = selectedOption.toString().split("-");
 
-                Object valor = JOptionPane.showInputDialog(null, "Digite um valor:", "Conversor de Moedas", JOptionPane.QUESTION_MESSAGE);
+                Object valor = JOptionPane.showInputDialog(null, DIGITE_UM_VALOR, CONVERSOR_MOEDA, JOptionPane.QUESTION_MESSAGE);
 
                 Double valorMoedaA;
                 try {
@@ -79,7 +87,7 @@ public class App {
 
                 } catch (Exception e) {
 
-                    JOptionPane.showMessageDialog(null, "O valor digitado é inválido.", "Conversor de Moedas", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, VALOR_INVALIDO, CONVERSOR_MOEDA, JOptionPane.ERROR_MESSAGE);
 
                     continue MENU_PRINCIPAL;
 
@@ -89,17 +97,17 @@ public class App {
                 
                 if (valorMoedaB != null) {
 
-                    JOptionPane.showMessageDialog(null, String.format("%.2f%s%s%s%.2f%s%s%s", valorMoedaA, " (", moeda[0], ") equivale a ", valorMoedaB, " (", moeda[1], ")."), "Conversor de Moedas", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, String.format("%.2f%s%s%s%.2f%s%s%s", valorMoedaA, " (", moeda[0], ") equivale a ", valorMoedaB, " (", moeda[1], ")."), CONVERSOR_MOEDA, JOptionPane.INFORMATION_MESSAGE);
 
                 } else {
 
-                    JOptionPane.showMessageDialog(null, "Houve uma falha ao tentar realizar a conversão das moedas.", "Conversor de Moedas", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, FALHA_CONVERSOR_MOEDA, CONVERSOR_MOEDA, JOptionPane.ERROR_MESSAGE);
 
                 }
 
             } else if (selectedOption.toString() == CONVERSOR_TEMPERATURA) {
 
-                selectedOption = JOptionPane.showInputDialog(null, "Escolha uma opção", "Conversor de Temperatura", JOptionPane.QUESTION_MESSAGE, null, optionsTemperatura, optionsTemperatura[0]);
+                selectedOption = JOptionPane.showInputDialog(null, ESCOLHA_UMA_OPCAO, CONVERSOR_TEMPERATURA, JOptionPane.QUESTION_MESSAGE, null, optionsTemperatura, optionsTemperatura[0]);
 
                 if (selectedOption == null) {
 
@@ -109,7 +117,7 @@ public class App {
 
                 String[] escala = selectedOption.toString().split("-");
 
-                Object valor = JOptionPane.showInputDialog(null, "Digite um valor:", "Conversor de Temperaturas", JOptionPane.QUESTION_MESSAGE);
+                Object valor = JOptionPane.showInputDialog(null, DIGITE_UM_VALOR, CONVERSOR_TEMPERATURA, JOptionPane.QUESTION_MESSAGE);
 
                 Double valorNaEscalaA;
                 try {
@@ -118,7 +126,7 @@ public class App {
 
                 } catch (Exception e) {
 
-                    JOptionPane.showMessageDialog(null, "O valor digitado é inválido.", "Conversor de Temperaturas", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, VALOR_INVALIDO, CONVERSOR_TEMPERATURA, JOptionPane.ERROR_MESSAGE);
 
                     continue MENU_PRINCIPAL;
 
@@ -128,11 +136,11 @@ public class App {
                 
                 if (valorNaEscalaB != null) {
 
-                    JOptionPane.showMessageDialog(null, String.format("%.2f%s%s%s%.2f%s%s%s", valorNaEscalaA, " (", escala[0], ") equivale a ", valorNaEscalaB, " (", escala[1], ")."), "Conversor de Temperaturas", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, String.format("%.2f%s%s%s%.2f%s%s%s", valorNaEscalaA, " (", escala[0], ") equivale a ", valorNaEscalaB, " (", escala[1], ")."), CONVERSOR_TEMPERATURA, JOptionPane.INFORMATION_MESSAGE);
 
                 } else {
 
-                    JOptionPane.showMessageDialog(null, "Houve uma falha ao tentar realizar a conversão das temperaturas.", "Conversor de Temperaturas", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, FALHA_CONVERSOR_TEMPERATURA, CONVERSOR_TEMPERATURA, JOptionPane.ERROR_MESSAGE);
 
                 }
 
